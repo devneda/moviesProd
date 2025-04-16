@@ -1,7 +1,11 @@
 {
     "name": "movies-frontend",
     "version": "0.1",
-    "source": "src/index.html",
+    "source": [
+        "src/index.html",
+        "src/modify.html",
+        "src/registro.html"
+    ],
     "type": "module",
     "scripts": {
         "start": "parcel --no-cache",
