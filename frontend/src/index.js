@@ -6,9 +6,10 @@ window.readMovies = function() {
             const movieList = response.data;
             const movieUl = document.getElementById('movies');
             movieList.forEach(movie => {
-                const li = document.createElement('li');
-                li.appendChild(document.createTextNode(movie.title + ' (' + movie.year + ') ' + movie.description));
-                movieUl.appendChild(li);
+                const listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.appendChild(document.createTextNode(movie.title + ' (' + movie.year + ') ' + movie.description));
+                movieUl.appendChild(listItem);
             })
         });
 };
