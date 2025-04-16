@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>proyecto</title>
+    <title>Registro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <script type="module" src="registro.js"></script>
 </head>
@@ -16,9 +16,12 @@
         <li class="nav-item">
             <a class="nav-link active" href="#">Registro</a>
         </li>
+        <li class='nav-item'>
+            <a class='nav-link' href='./modify.html'>Modificar</a>
+        </li>
     </ul>
     <h1>Registro de peliculas</h1>
-    <form>
+    <form action="http://localhost:8080/movies">
         <div class="mb-3">
             <label for="title" class="form-label">Título</label>
             <input class="form-control" type="text" id="title"/>
@@ -30,6 +33,10 @@
         <div class="mb-3">
             <label for="year" class="form-label">Año</label>
             <input class="form-control" type="text" id="year"/>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Imagen</label>
+            <input class="form-control" type="file" id="image"/>
         </div>
         <button type="button" class="btn btn-primary" onclick="addMovie()">Registrar</button>
     </form>
