@@ -62,9 +62,9 @@ app.put('/movies/:movieId', async (req, res) => {
     res.status(201).json({});
 });
 
-app.delete('/movies/:title', async (req, res) => {
-    const titleMovie = req.params.title;
-    await db('movies').del().where({title: titleMovie});
+app.delete('/movies/:movieId', async (req, res) => {
+    const id = req.params.movieId;
+    await db('movies').del().where({id: id});
     res.status(204).json({});
 });
 

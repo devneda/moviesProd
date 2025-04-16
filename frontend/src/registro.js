@@ -1,13 +1,15 @@
 import axios from 'axios';
+import { notifyError, notifyOk} from './dialogUtil.js';
+import { el } from './documentUtil.js';
 
 window.addMovie = function() {
-    const title = document.getElementById('title').value;
-    const description = document.getElementById('description').value;
-    const year = document.getElementById('year').value;
+    const title = el('title').value;
+    const description = el('description').value;
+    const year = el('year').value;
 
     //TODO debo validar los datos
     if (title === '') {
-        alert('El título es un campo obligatorio');
+        notifyError('El título es un campo obligatorio');
         return;
     }
 
@@ -16,4 +18,11 @@ window.addMovie = function() {
         description: description,
         year: year
     });
+
+    //TODO debo confirmarle al usuario si todo ha ido bien (o mal)
+    notifyOk('Pelicula registrada');
+    //TODO debo limpiar el formulario
+    document.getElementById('title').value = '';
+    document.getElementById('description').value = '';
+    document.getElementById('year').value = '';
 };
